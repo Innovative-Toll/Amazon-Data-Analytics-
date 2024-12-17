@@ -21,16 +21,16 @@
     <div class="container-fluid">
       <!-- Header Row -->
       <div class="row">
-        <div class="col text-center" style="margin-bottom: 20px">
-          <img src="/static/icons/innovative.png" style="height: 100px" />
+        <div class="col-12 text-center mb-4">
+          <img src="/static/icons/innovative.png" style="height: 100px" class="img-fluid"/>
         </div>
       </div>
 
       <!-- Summary Row -->
-      <div class="row">
-        <div class="col-2">
-          <div class="card border-light mb-3">
-            <div class="card-body d-flex align-items-center">
+      <div class="row text-center g-3">
+        <div class="col-12 col-md-4">
+          <div class="card h-100">
+            <div class="card-body d-flex align-items-center justify-content-center">
               <img src="/static/icons/TT.png" class="icon" />
               <p id="total-transactions" class="card-text summary-stat">
                 TOTAL TRANSACTIONS:
@@ -38,9 +38,9 @@
             </div>
           </div>
         </div>
-        <div class="col-2">
-          <div class="card border-light mb-3">
-            <div class="card-body d-flex align-items-center">
+        <div class="col-12 col-md-4">
+          <div class="card h-100">
+            <div class="card-body d-flex align-items-center justify-content-center">
               <img src="/static/icons/sav.png" class="icon" />
               <p id="average-savings" class="card-text summary-stat">
                 TOTAL SAVINGS:
@@ -48,9 +48,9 @@
             </div>
           </div>
         </div>
-        <div class="col-2">
-          <div class="card border-light mb-3">
-            <div class="card-body d-flex align-items-center">
+        <div class="col-12 col-md-4">
+          <div class="card h-100">
+            <div class="card-body d-flex align-items-center justify-content-center">
               <img src="/static/icons/LP.png" class="icon" />
               <p id="active-lp-count" class="card-text summary-stat">
                 ACTIVE LP COUNT:
@@ -61,71 +61,36 @@
       </div>
 
       <!-- Filters and Visualization Row -->
-      <div class="row">
+      <div class="row mt-3">
         <!-- Filters Column -->
-        <div class="col-2">
-          <div class="card mb-3" style="background-color: #03082a">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="card">
             <div class="card-header">
               <h4 class="card-title text-white">Filters</h4>
             </div>
             <div class="card-body">
-              <label for="yearDropdown" class="form-label text-white"
-                >Year</label
-              >
-              <select id="yearDropdown" class="form-select">
-                <!-- JavaScript populated -->
-              </select>
-              <label for="weekDropdown" class="form-label text-white"
-                >Week:</label
-              >
-              <select id="weekDropdown" class="form-select" multiple>
-                <!-- Options will be populated by JavaScript -->
-              </select>
+              <label for="yearDropdown" class="form-label text-white">Year</label>
+              <select id="yearDropdown" class="form-select"></select>
+              <label for="weekDropdown" class="form-label text-white mt-2">Week</label>
+              <select id="weekDropdown" class="form-select" multiple></select>
             </div>
           </div>
         </div>
 
         <!-- Visualization Column -->
-        <div class="col-10">
-          <div class="card mb-3" style="background-color: #03082a">
+        <div class="col-12 col-md-9">
+          <div class="card">
             <div class="card-body">
-              <!-- Arrange plots in a grid -->
-              <div class="row">
-                <div class="col-6">
-                  <div id="plot_lp_status_weekly"></div>
-                </div>
-                <div class="col-6">
-                  <div id="plot_lp_count_weekly"></div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <div id="plot_active_lp_sources"></div>
-                </div>
-                <div class="col-6">
-                  <div id="plot_active_lp_sources_trend"></div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <div id="plot_toll_transactions"></div>
-                </div>
-                <div class="col-6">
-                  <div id="toll_transactions_line_plot"></div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <div id="plot_sla_trend_bar"></div>
-                </div>
-                <div class="col-6">
-                  <div id="plot_sla_trend_line"></div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <div id="plot_savings_trend"></div>
-                </div>
+              <div class="row g-4">
+                <div class="col-12 col-md-6"><div id="plot_lp_status_weekly"></div></div>
+                <div class="col-12 col-md-6"><div id="plot_lp_count_weekly"></div></div>
+                <div class="col-12 col-md-6"><div id="plot_active_lp_sources"></div></div>
+                <div class="col-12 col-md-6"><div id="plot_active_lp_sources_trend"></div></div>
+                <div class="col-12 col-md-6"><div id="plot_toll_transactions"></div></div>
+                <div class="col-12 col-md-6"><div id="toll_transactions_line_plot"></div></div>
+                <div class="col-12 col-md-6"><div id="plot_sla_trend_bar"></div></div>
+                <div class="col-12 col-md-6"><div id="plot_sla_trend_line"></div></div>
+                <div class="col-12"><div id="plot_savings_trend"></div></div>
               </div>
             </div>
           </div>
