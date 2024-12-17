@@ -108,18 +108,18 @@ def plot_lp_count_weekly(filtered_lp_status_weekly):
                   title='LP Count Week Over Week (Active & End of Life)',
                   labels={'value': 'Number of LPs', 'WEEK': 'Week', 'variable': 'Lifecycle State'},
                   color_discrete_map={'Active': '#2ca02c', 'End of Life': '#1f77b4'})
-    fig.update_traces(mode='lines+markers')
+    fig.update_traces(mode='lines+markers')  # Add markers to all lines
     fig.update_layout(paper_bgcolor='rgba(255, 255, 255, 0.8)')
     fig.update_traces(hovertemplate='week %{x} <br>%{y}<extra></extra>')
     return fig
  
 def toll_transactions_line_plot(filtered_toll_transactions_weekly):
     fig = px.line(filtered_toll_transactions_weekly, x='WEEK', y='Count',
-                  title='Count of Active LICENSE PLATEs(Power Units Only) based on Transaction Type',
+                  title='Count of Active LICENSE PLATEs (Power Units Only) based on Transaction Type',
                   labels={'Count': 'Number of Transactions', 'WEEK': 'Week'},
                   color='TRANSACTION TYPE',
                   color_discrete_map={'Transponder Toll': '#2ca02c', 'Plate Toll': '#1f77b4'})
-    fig.update_traces(mode='lines+markers')
+    fig.update_traces(mode='lines+markers')  # Add markers to all lines
     fig.update_traces(hovertemplate='week %{x} <br>%{y}<extra></extra>')
     fig.update_layout(paper_bgcolor='rgba(255, 255, 255, 0.8)')
     return fig
@@ -127,7 +127,12 @@ def toll_transactions_line_plot(filtered_toll_transactions_weekly):
 def plot_active_lp_sources_trend(filtered_active_lp_weekly):
     traces = []
     for source, data in filtered_active_lp_weekly.groupby('SOURCE'):
-        trace = go.Scatter(x=data['WEEK'], y=data['Count'], mode='lines', name=f'Trend - {source}')
+        trace = go.Scatter(
+            x=data['WEEK'], 
+            y=data['Count'], 
+            mode='lines+markers',  # Add markers to lines
+            name=f'Trend - {source}'
+        )
         traces.append(trace)
     layout = go.Layout(
         title='Trend of Active LICENSE PLATEs by Source',
@@ -136,7 +141,6 @@ def plot_active_lp_sources_trend(filtered_active_lp_weekly):
         paper_bgcolor='rgba(255, 255, 255, 0.8)'
     )
     fig = go.Figure(data=traces, layout=layout)
-    fig.update_traces(mode='lines+markers')
     fig.update_traces(hovertemplate='week %{x} <br> %{y}<extra></extra>')
     return fig
  
