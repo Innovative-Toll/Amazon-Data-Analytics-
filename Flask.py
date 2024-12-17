@@ -5,12 +5,18 @@ import pandas as pd
 from sqlalchemy import create_engine
 import json
 from datetime import datetime
- 
-# Database connection
-dbname = "amazon_data_weekly"
-user = "postgres"
-password = "password"
-host = "localhost"
+from dotenv import load_dotenv
+import os
+
+# Load .env file
+load_dotenv()
+
+# Retrieve credentials from environment variables
+dbname = os.getenv("DB_NAME")
+user = os.getenv("DB_USER")
+password = os.getenv("DB_PASSWORD")
+host = os.getenv("DB_HOST")
+
 db_url = f"postgresql+psycopg2://{user}:{password}@{host}/{dbname}"
 engine = create_engine(db_url)
  
