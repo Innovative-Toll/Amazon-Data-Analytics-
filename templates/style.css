@@ -1,0 +1,78 @@
+/* style.css */
+body {
+    background-color: #03082a; /* Dark blue background */
+    color: #FFFFFF; /* White text color */
+    font-family: Arial, sans-serif;
+}
+ 
+.card {
+    background-color: #03082a; /* Dark blue background for cards */
+    color: #FFFFFF; /* White text color in cards */
+    border: 1px solid #1a1a1a; /* Darker border for cards */
+}
+ 
+.summary-row .card-body {
+    color: #FFFFFF; /* White text color in summary rows */
+}
+ 
+.icon {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+ 
+.summary-stat {
+    font-size: 16px;
+    margin: 0;
+}
+ 
+#visualization-output {
+    height: 80vh; /* Responsive height for visualization */
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+ 
+.select2-container--default .select2-selection--multiple {
+    background-color: #FFFFFF; /* White background for multi-select */
+    color: #000000; /* Black text color */
+    border: 1px solid #1a1a1a; /* Darker border for dropdown */
+}
+ 
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    color: #000000; /* Black text color for selected items */
+}
+ 
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color: #000000; /* Black color for remove icon */
+}
+ 
+.d-flex {
+    display: flex;
+}
+ 
+.align-items-center {
+    align-items: center;
+}
+ 
+.justify-content-center {
+    justify-content: center;
+}
+ 
+.mt-3 {
+    margin-top: 1rem; /* Bootstrap spacing utility */
+}
+ 
+.bg-dark {
+    background-color: #03082a; /* Dark background color */
+}
+ 
+.text-light {
+    color: #FFFFFF; /* White text color */
+}
+ 
+/* Additional custom styles for responsiveness */
+@media (max-width: 768px) {
+    .summary-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
