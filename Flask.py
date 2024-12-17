@@ -119,6 +119,7 @@ def toll_transactions_line_plot(filtered_toll_transactions_weekly):
                   labels={'Count': 'Number of Transactions', 'WEEK': 'Week'},
                   color='TRANSACTION TYPE',
                   color_discrete_map={'Transponder Toll': '#2ca02c', 'Plate Toll': '#1f77b4'})
+    fig.update_traces(mode='lines+markers')
     fig.update_traces(hovertemplate='week %{x} <br>%{y}<extra></extra>')
     fig.update_layout(paper_bgcolor='rgba(255, 255, 255, 0.8)')
     return fig
@@ -135,6 +136,7 @@ def plot_active_lp_sources_trend(filtered_active_lp_weekly):
         paper_bgcolor='rgba(255, 255, 255, 0.8)'
     )
     fig = go.Figure(data=traces, layout=layout)
+    fig.update_traces(mode='lines+markers')
     fig.update_traces(hovertemplate='week %{x} <br> %{y}<extra></extra>')
     return fig
  
